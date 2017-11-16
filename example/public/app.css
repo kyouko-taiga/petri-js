@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+}
+
+#petrinet {
+  width: 100vw;
+  height: 100vh;
+}
+
+#petrinet g.transition.fireable > rect {
+  fill: rgb(144,166,255);
+  stroke: rgb(93,125,255);
+  cursor: pointer;
+}
+
+#petrinet text {
+  font-family: 'Crimson Text', serif;
+  fill: #000;
+  pointer-events: none;
+  cursor: pointer;
+}

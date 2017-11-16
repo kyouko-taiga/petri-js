@@ -1,0 +1,38 @@
+{
+  "name": "petri",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "8.0.1",
+    "babel-plugin-transform-function-bind": "6.22.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-preset-env": "1.6.0",
+    "babel-register": "6.26.0",
+    "babelify": "latest",
+    "browserify": "latest",
+    "watchify": "latest"
+  },
+  "dependencies": {
+    "petri-js": "0.0.3"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "transform-function-bind",
+      "transform-object-rest-spread"
+    ]
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "scripts": {
+    "clean": "rm -f public/app.js",
+    "build-debug": "browserify src/app.js -o public/app.js -v -d",
+    "build": "browserify src/app.js | uglifyjs -cm > public/app.js",
+    "watch": "watchify src/app.js -o public/app.js -v -d"
+  }
+}

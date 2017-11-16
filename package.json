@@ -1,0 +1,50 @@
+{
+  "name": "petri-js",
+  "version": "0.0.3",
+  "description": "A library to display and interact with Petri Nets.",
+  "author": "Dimitri Racordon",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyouko-taiga/petri-js.git"
+  },
+  "main": "./dist/index.js",
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-eslint": "8.0.1",
+    "babel-plugin-transform-function-bind": "6.22.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-preset-env": "1.6.0",
+    "babel-register": "6.26.0",
+    "eslint": "4.8.0"
+  },
+  "dependencies": {
+    "d3": "4.11.0",
+    "d3-force": "1.1.0",
+    "redux": "3.7.2",
+    "redux-logger": "3.0.6",
+    "redux-undo": "1.0.0-beta7"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ],
+    "plugins": [
+      "transform-function-bind",
+      "transform-object-rest-spread"
+    ]
+  },
+  "scripts": {
+    "init": "mkdir dist",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean && npm run init",
+    "build": "babel ./src -d ./dist --ignore test.js",
+    "prepare": "npm run build",
+    "pretest": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist"
+  ]
+}
